@@ -450,29 +450,39 @@ with right:
         with row1[0]:
             enemy_tank = st.selectbox(
                 "敵タンク",
-                ["選択してください"] + TANK_HEROES,
+                TANK_HEROES,
+                index=None,
+                placeholder="選択してください",
             )
         with row1[1]:
             enemy_dps_1 = st.selectbox(
                 "敵DPS 1",
-                ["選択してください"] + DPS_HEROES,
+                DPS_HEROES,
+                index=None,
+                placeholder="選択してください",
             )
 
         row2 = st.columns(3)
         with row2[0]:
             enemy_dps_2 = st.selectbox(
                 "敵DPS 2",
-                ["選択してください"] + DPS_HEROES,
+                DPS_HEROES,
+                index=None,
+                placeholder="選択してください",
             )
         with row2[1]:
             enemy_support_1 = st.selectbox(
                 "敵サポート 1",
-                ["選択してください"] + SUPPORT_HEROES,
+                SUPPORT_HEROES,
+                index=None,
+                placeholder="選択してください",
             )
         with row2[2]:
             enemy_support_2 = st.selectbox(
                 "敵サポート 2",
-                ["選択してください"] + SUPPORT_HEROES,
+                SUPPORT_HEROES,
+                index=None,
+                placeholder="選択してください",
             )
 
 analyze_clicked = st.button("🔎　敵チームを分析する　→", use_container_width=True)
@@ -488,6 +498,18 @@ if analyze_clicked:
         enemy_support_1,
         enemy_support_2,
     ]
+
+    # 未選択の項目を除外
+    enemies = [
+        enemy
+        for enemy in enemies
+        if enemy is not None
+    ]
+
+    # 敵が1人も選択されていない場合は分析しない
+    if not enemies:
+        st.warning("⚠️ 敵ヒーローを1人以上選択してください。")
+        st.stop()
 
     results = analyze_matchup(my_hero, enemies)
     recommendations = recommend_heroes(enemies, my_role)
