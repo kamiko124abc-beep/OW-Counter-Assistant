@@ -657,11 +657,29 @@ if analyze_clicked:
 
         medal = "BEST PICK" if i == 1 else "RECOMMENDED"
 
+        role_badges = {
+            "タンク": "🛡️ TANK",
+            "DPS": "🎯 DPS",
+            "サポート": "✚ SUPPORT",
+        }
+        role_badge = role_badges.get(my_role, my_role)
+
         with col:
             st.markdown(
                 f"""
                 <div class="pick-card rank{i}">
                     <div class="rank-bubble">{i}</div>
+                    <div style="
+                        display:inline-block;
+                        margin-left:8px;
+                        padding:5px 10px;
+                        border-radius:999px;
+                        background:rgba(90,150,255,.12);
+                        border:1px solid rgba(90,180,255,.30);
+                        font-size:.72rem;
+                        font-weight:800;
+                        letter-spacing:.06em;
+                    ">{role_badge}</div>
                     <div class="pick-name">{hero}</div>
                     <div class="pick-label">{medal}</div>
                     <div class="score-pill">推薦スコア {score}</div>
