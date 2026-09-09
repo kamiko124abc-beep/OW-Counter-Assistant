@@ -1,3 +1,8 @@
 
 # Local backup files
 app_before_*.py
+
+# Patch updater local recovery / runtime files
+.update_backups/
+.update.lock/
+__pycache__/
