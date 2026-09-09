@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "patch_id": "2026-09-08-6d883483dae2",
-  "status": "pending",
+  "status": "applied",
   "source_hashes": {
     "all_matchups_extra.py": "74c3722628a56374e692bc04e15c51be5578611afe339b7f951b3d71486dc135",
     "matchups.py": "50e9c1f13b5c85b59b1b9b1629dd76ed1a3241db295fabe2bd1a0c8fc200784d",
@@ -4618,7 +4618,7 @@
       "current": 5,
       "id": "[\"all_matchups_extra.py\", \"ALL_EXTRA_MATCHUPS\", [\"マウガ\", \"ソルジャー76\"]]",
       "proposed": 6,
-      "approved": false,
+      "approved": true,
       "suggested_range": [
         4,
         6
@@ -13422,7 +13422,7 @@
       "current": 6,
       "id": "[\"all_matchups_extra.py\", \"ALL_EXTRA_MATCHUPS\", [\"フレイヤ\", \"アナ\"]]",
       "proposed": 7,
-      "approved": false,
+      "approved": true,
       "suggested_range": [
         5,
         7
@@ -17381,7 +17381,7 @@
       "current": 4,
       "id": "[\"all_matchups_extra.py\", \"ALL_EXTRA_MATCHUPS\", [\"ソルジャー76\", \"マウガ\"]]",
       "proposed": 3,
-      "approved": false,
+      "approved": true,
       "suggested_range": [
         3,
         5
@@ -20314,7 +20314,7 @@
       "current": 6,
       "id": "[\"all_matchups_extra.py\", \"ALL_EXTRA_MATCHUPS\", [\"トレーサー\", \"ブリギッテ\"]]",
       "proposed": 7,
-      "approved": false,
+      "approved": true,
       "suggested_range": [
         5,
         7
@@ -22886,7 +22886,7 @@
       "current": 4,
       "id": "[\"all_matchups_extra.py\", \"ALL_EXTRA_MATCHUPS\", [\"アナ\", \"フレイヤ\"]]",
       "proposed": 3,
-      "approved": false,
+      "approved": true,
       "suggested_range": [
         3,
         5
@@ -24736,7 +24736,7 @@
       "current": 4,
       "id": "[\"all_matchups_extra.py\", \"ALL_EXTRA_MATCHUPS\", [\"ブリギッテ\", \"トレーサー\"]]",
       "proposed": 3,
-      "approved": false,
+      "approved": true,
       "suggested_range": [
         3,
         5
@@ -33863,7 +33863,7 @@
       "current": 6,
       "id": "[\"matchups.py\", \"MATCHUPS\", [\"フレイヤ\", \"アナ\", \"danger\"]]",
       "proposed": 7,
-      "approved": false,
+      "approved": true,
       "suggested_range": [
         5,
         7
@@ -38919,5 +38919,8 @@
     "scope": "5v5 live; 3 matchups, 6 directed evaluations",
     "method": "定性的な暫定評価。公式に相性スコアはなく、±1の幅と対象選定は作成者の判断。勝率・撃破閾値は未検証。",
     "approval": "ユーザーが --approve-recommended を実行した時だけ recommended=true の行を承認する。"
-  }
+  },
+  "approval_method": "explicit --approve-recommended command",
+  "applied_at": "2026-09-09T20:17:32.244654+00:00",
+  "backup": "/Users/takeda_04/OW-Counter-Assistant-Public/.update_backups/20260909T201731-a7112433"
 }
