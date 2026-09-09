@@ -4617,13 +4617,20 @@
       "enemy": "ソルジャー76",
       "current": 5,
       "id": "[\"all_matchups_extra.py\", \"ALL_EXTRA_MATCHUPS\", [\"マウガ\", \"ソルジャー76\"]]",
-      "proposed": 5,
+      "proposed": 6,
       "approved": false,
       "suggested_range": [
         4,
         6
       ],
-      "reason": "公式に相性値はないため据え置きを初期提案。対象ヒーローの変更・距離・5v5/6v6条件を確認し、必要なら±1から手動評価。"
+      "reason": "マウガのアーマー25減、両撃ちの拡散増加とダメージ減衰開始距離の短縮から、距離を保つソルジャー76に対する圧力と耐久が下がると推測し危険度を1上げる。片撃ちの精度改善は逆方向に働き、近距離では差が小さい。",
+      "recommended": true,
+      "confidence": "low",
+      "mode": "5v5 live",
+      "evidence_file": "patch.json",
+      "evidence_heroes": [
+        "Mauga"
+      ]
     },
     {
       "file": "all_matchups_extra.py",
@@ -13414,13 +13421,20 @@
       "enemy": "アナ",
       "current": 6,
       "id": "[\"all_matchups_extra.py\", \"ALL_EXTRA_MATCHUPS\", [\"フレイヤ\", \"アナ\"]]",
-      "proposed": 6,
+      "proposed": 7,
       "approved": false,
       "suggested_range": [
         5,
         7
       ],
-      "reason": "公式に相性値はないため据え置きを初期提案。対象ヒーローの変更・距離・5v5/6v6条件を確認し、必要なら±1から手動評価。"
+      "reason": "フレイヤの通常射撃30→28、爆発80→75、返還ボルト8→5という火力低下から、アナを倒し切る余裕が減ると推測し危険度を1上げる。アナの同記事の変更はスタジアム専用のため加味しない。",
+      "recommended": true,
+      "confidence": "low",
+      "mode": "5v5 live",
+      "evidence_file": "patch.json",
+      "evidence_heroes": [
+        "Freja"
+      ]
     },
     {
       "file": "all_matchups_extra.py",
@@ -17366,13 +17380,20 @@
       "enemy": "マウガ",
       "current": 4,
       "id": "[\"all_matchups_extra.py\", \"ALL_EXTRA_MATCHUPS\", [\"ソルジャー76\", \"マウガ\"]]",
-      "proposed": 4,
+      "proposed": 3,
       "approved": false,
       "suggested_range": [
         3,
         5
       ],
-      "reason": "公式に相性値はないため据え置きを初期提案。対象ヒーローの変更・距離・5v5/6v6条件を確認し、必要なら±1から手動評価。"
+      "reason": "距離を保って射撃する前提で、マウガのアーマー減少と両撃ちの中距離性能低下を利用しやすくなると推測し危険度を1下げる。片撃ちの精度改善・接近された場合を考慮し、それ以上は下げない。",
+      "recommended": true,
+      "confidence": "low",
+      "mode": "5v5 live",
+      "evidence_file": "patch.json",
+      "evidence_heroes": [
+        "Mauga"
+      ]
     },
     {
       "file": "all_matchups_extra.py",
@@ -20292,13 +20313,20 @@
       "enemy": "ブリギッテ",
       "current": 6,
       "id": "[\"all_matchups_extra.py\", \"ALL_EXTRA_MATCHUPS\", [\"トレーサー\", \"ブリギッテ\"]]",
-      "proposed": 6,
+      "proposed": 7,
       "approved": false,
       "suggested_range": [
         5,
         7
       ],
-      "reason": "公式に相性値はないため据え置きを初期提案。対象ヒーローの変更・距離・5v5/6v6条件を確認し、必要なら±1から手動評価。"
+      "reason": "ブリギッテのアーマー増加により、トレーサーが近距離で倒し切る負担が増すと推測。対ブリギッテの危険度を1上げる暫定評価。キルに必要な弾数・勝率の実測は未検証。",
+      "recommended": true,
+      "confidence": "low",
+      "mode": "5v5 live",
+      "evidence_file": "patch.json",
+      "evidence_heroes": [
+        "Brigitte"
+      ]
     },
     {
       "file": "all_matchups_extra.py",
@@ -22857,13 +22885,20 @@
       "enemy": "フレイヤ",
       "current": 4,
       "id": "[\"all_matchups_extra.py\", \"ALL_EXTRA_MATCHUPS\", [\"アナ\", \"フレイヤ\"]]",
-      "proposed": 4,
+      "proposed": 3,
       "approved": false,
       "suggested_range": [
         3,
         5
       ],
-      "reason": "公式に相性値はないため据え置きを初期提案。対象ヒーローの変更・距離・5v5/6v6条件を確認し、必要なら±1から手動評価。"
+      "reason": "フレイヤの射撃・爆発ダメージ低下により、アナが受ける射撃圧力が減ると推測し危険度を1下げる。機動力差は残り、撃破に必要な命中数の変化は未検証。",
+      "recommended": true,
+      "confidence": "low",
+      "mode": "5v5 live",
+      "evidence_file": "patch.json",
+      "evidence_heroes": [
+        "Freja"
+      ]
     },
     {
       "file": "all_matchups_extra.py",
@@ -24700,13 +24735,20 @@
       "enemy": "トレーサー",
       "current": 4,
       "id": "[\"all_matchups_extra.py\", \"ALL_EXTRA_MATCHUPS\", [\"ブリギッテ\", \"トレーサー\"]]",
-      "proposed": 4,
+      "proposed": 3,
       "approved": false,
       "suggested_range": [
         3,
         5
       ],
-      "reason": "公式に相性値はないため据え置きを初期提案。対象ヒーローの変更・距離・5v5/6v6条件を確認し、必要なら±1から手動評価。"
+      "reason": "ブリギッテの通常HP25がアーマー25に置き換わり、近距離での生存力を改善する調整。近距離射撃にさらされる場面を想定し、対トレーサーの危険度を1下げる暫定評価。距離を取られる展開では改善が小さい。",
+      "recommended": true,
+      "confidence": "low",
+      "mode": "5v5 live",
+      "evidence_file": "patch.json",
+      "evidence_heroes": [
+        "Brigitte"
+      ]
     },
     {
       "file": "all_matchups_extra.py",
@@ -33820,13 +33862,20 @@
       "enemy": "アナ",
       "current": 6,
       "id": "[\"matchups.py\", \"MATCHUPS\", [\"フレイヤ\", \"アナ\", \"danger\"]]",
-      "proposed": 6,
+      "proposed": 7,
       "approved": false,
       "suggested_range": [
         5,
         7
       ],
-      "reason": "公式に相性値はないため据え置きを初期提案。対象ヒーローの変更・距離・5v5/6v6条件を確認し、必要なら±1から手動評価。"
+      "reason": "フレイヤの通常射撃30→28、爆発80→75、返還ボルト8→5という火力低下から、アナを倒し切る余裕が減ると推測し危険度を1上げる。アナの同記事の変更はスタジアム専用のため加味しない。",
+      "recommended": true,
+      "confidence": "low",
+      "mode": "5v5 live",
+      "evidence_file": "patch.json",
+      "evidence_heroes": [
+        "Freja"
+      ]
     },
     {
       "file": "matchups.py",
@@ -38864,5 +38913,11 @@
       ],
       "reason": "公式に相性値はないため据え置きを初期提案。対象ヒーローの変更・距離・5v5/6v6条件を確認し、必要なら±1から手動評価。"
     }
-  ]
+  ],
+  "curation": {
+    "created_at": "2026-09-09T20:09:06.107592+00:00",
+    "scope": "5v5 live; 3 matchups, 6 directed evaluations",
+    "method": "定性的な暫定評価。公式に相性スコアはなく、±1の幅と対象選定は作成者の判断。勝率・撃破閾値は未検証。",
+    "approval": "ユーザーが --approve-recommended を実行した時だけ recommended=true の行を承認する。"
+  }
 }

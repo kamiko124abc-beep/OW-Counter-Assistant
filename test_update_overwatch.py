@@ -63,6 +63,23 @@ class Tests(unittest.TestCase):
         expected = before[entry['file']][:entry['start']]+str(value).encode()+before[entry['file']][entry['end']:]
         self.assertEqual((self.root/entry['file']).read_bytes(),expected)
 
+    def test_recommended_only_and_no_mutation(self):
+        item = self.review['candidates'][0]
+        item.update(recommended=True, proposed=(item['current']+1)%11)
+        other = self.review['candidates'][1]
+        other.update(approved=True, proposed=(other['current']+1)%11)
+        selected_review = u.recommended_review(self.review)
+        selected = u.validate(selected_review, self.root)
+        self.assertEqual(len(selected), 1)
+        self.assertEqual(selected[0][0]['path'], item['path'])
+        self.assertFalse(item['approved'])
+        self.assertFalse(selected_review['candidates'][1]['approved'])
+
+    def test_recommended_missing_or_invalid(self):
+        with self.assertRaises(ValueError): u.recommended_review(self.review)
+        self.review['candidates'][0]['recommended'] = 'true'
+        with self.assertRaises(ValueError): u.recommended_review(self.review)
+
     def test_unapproved_rejected(self):
         with self.assertRaises(ValueError): u.validate(self.review,self.root)
 

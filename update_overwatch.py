@@ -2,6 +2,7 @@
 """Official patch -> review JSON -> explicit approval. Python standard library only."""
 import argparse
 import ast
+import copy
 from contextlib import contextmanager
 from datetime import datetime, timezone
 import hashlib
@@ -289,7 +290,23 @@ def apply_values(selected, root=ROOT):
             path.write_bytes(data)
 
 
-def approve():
+def recommended_review(review):
+    """The explicit CLI command grants approval; preparation never does."""
+    result = copy.deepcopy(review)
+    count = 0
+    for item in result['candidates']:
+        recommended = item.get('recommended', False)
+        if type(recommended) is not bool:
+            raise ValueError('recommended は true/false にしてください。')
+        item['approved'] = recommended
+        count += recommended and item['proposed'] != item['current']
+    if not count:
+        raise ValueError('具体的な推奨変更はまだありません。レビューの作成が必要です。')
+    result['approval_method'] = 'explicit --approve-recommended command'
+    return result
+
+
+def approve(recommended=False):
     latest = json.loads((ROOT/'updates/latest.json').read_text())['patch_id']
     if not re.fullmatch(r'\d{4}-\d{2}-\d{2}-[0-9a-f]{12}', latest):
         raise ValueError('パッチIDが不正です。')
@@ -303,6 +320,8 @@ def approve():
     review = json.loads(path.read_text())
     if review.get('patch_id') != latest:
         raise ValueError('パッチIDが一致しません。')
+    if recommended:
+        review = recommended_review(review)
     selected = validate(review)
     saved = backup()
     originals = {f:(ROOT/f).read_bytes() for f in TABLES}
@@ -326,13 +345,17 @@ def approve():
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--approve', action='store_true', help='編集済み提案の approved=true の変更を反映')
-    parser.add_argument('--check', action='store_true', help='検証のみ')
+    actions = parser.add_mutually_exclusive_group()
+    actions.add_argument('--approve', action='store_true', help='編集済み提案の approved=true の変更を反映')
+    actions.add_argument('--approve-recommended', action='store_true', help='レビューの推奨変更を一括承認して反映')
+    actions.add_argument('--check', action='store_true', help='検証のみ')
     args = parser.parse_args()
     try:
         with lock():
             if args.check:
                 print(checks())
+            elif args.approve_recommended:
+                approve(recommended=True)
             elif args.approve:
                 approve()
             else:
